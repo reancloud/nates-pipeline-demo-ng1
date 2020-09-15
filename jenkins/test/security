@@ -1,0 +1,12 @@
+@Library('reanplatform') _
+
+node {
+
+	def options = [
+		name: "nates-pipeline-demo-ng1",
+		tools: ['reandeploy'],
+		provider: ["aws"]
+	]
+
+	appPipelines.testSecurity(options)
+}
