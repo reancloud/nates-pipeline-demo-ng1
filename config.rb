@@ -70,12 +70,12 @@ set :server_test_tool, :inspec
 
 # What servers should be tested by inspec?
 #  - HCAP DevSecOps supports a simple syntax for declaring servers to be tested.
-server :myserver,
-       protocol: "ssh",
-       host: "myserver",
-       user: "ec2-user",
-       keys: "target/ssh-keys/myserver-key.pem",
-       test_profile: "myserver"
+#server :myserver,
+#       protocol: "ssh",
+#       host: "myserver",
+#       user: "ec2-user",
+#       keys: "target/ssh-keys/myserver-key.pem",
+#       test_profile: "myserver"
 #      ^^^
 #      HCAP DevSecOps will automatically run the inspec profile
 #      located in `test/MY-TEST-PROFILE`
@@ -112,13 +112,13 @@ server :myserver,
 #    based on any logic that you can define using Ruby.
 #  - HCAP DevSecOps allows you to "lazily" declare the values of inspec attributes,
 #    so that they are not calculated until the exact time that they are needed.
-set :myserver_inspec_inputs do
-  {
-    'environment' => fetch(:pipeline_env),
-    'project' => fetch(:application),
-    'prefix' => "#{fetch(:pipeline_env)}-#{fetch(:application)}"
-  }
-end
+#set :myserver_inspec_inputs do
+#  {
+#    'environment' => fetch(:pipeline_env),
+#    'project' => fetch(:application),
+#    'prefix' => "#{fetch(:pipeline_env)}-#{fetch(:application)}"
+#  }
+#end
 
 ##############################################################################################
 # APPLICATION TESTING
