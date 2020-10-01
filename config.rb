@@ -190,3 +190,10 @@ set :url_test_tool, :inspec
 set :url_tests, [
   { url: "/" },
 ]
+
+##############################################################################################
+# Modification from Noel
+##############################################################################################
+set :skip_functional_tests, true
+set :skip_load_tests, true
+set :skip_security_tests, true
