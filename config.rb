@@ -138,12 +138,12 @@ website :mysite, protocol: :http, host: reandeploy_output('app-myapp.json','ec2_
 #  - HCAP DevSecOps automatically loads Git credentials from the GIT_USER and GIT_PASS environment
 #    variables, unless you specifically provide alternative values.
 set :functional_tests, [
-  {
-    command_to_run_test: "mvn test -Dcucumber.options=\"--tags @app_test\"",
-    git_repository_url: "",
-    chrome: "72",
-    firefox: "63"
-  }
+#  {
+#    command_to_run_test: "mvn test -Dcucumber.options=\"--tags @app_test\"",
+#    git_repository_url: "",
+#    chrome: "72",
+#    firefox: "63"
+#  }
 ]
 
 # A list of HCAP Test load tests to be run, with a minimal number of options required.
@@ -152,23 +152,23 @@ set :functional_tests, [
 #  - HCAP DevSecOps automatically loads Git credentials from the GIT_USER and GIT_PASS environment
 #    variables, unless you specifically provide alternative values.
 set :load_tests, [
-  {
-    command_to_run_test: "mvn test -Dcucumber.options=\"--tags @app_test\"",
-    git_repository_url: "",
-    chrome: "72",
-    firefox: "63"
-  }
+#  {
+#    command_to_run_test: "mvn test -Dcucumber.options=\"--tags @app_test\"",
+#    git_repository_url: "",
+#    chrome: "72",
+#    firefox: "63"
+#  }
 ]
 
 # A list of HCAP Test security tests to be run, with a minimal number of options required.
 #  - HCAP DevSecOps automatically applies default test execution options to each test in the list below,
 #    unless you specifically provide an alternative value.
 set :security_tests, [
-  {
-    username_field_xpath: "//input[@id='login']",
-    password_field_xpath: "//input[@id='password']",
-    submit_button_xpath: "//input[@id='submit']"
-  }
+#  {
+#    username_field_xpath: "//input[@id='login']",
+#    password_field_xpath: "//input[@id='password']",
+#    submit_button_xpath: "//input[@id='submit']"
+#  }
 ]
 
 ##############################################################################################
@@ -188,5 +188,5 @@ set :url_test_tool, :inspec
 #    by specifying a sites: option, with an array of site names.
 #
 set :url_tests, [
-  { url: "/logout" },
+  { url: "/" },
 ]
