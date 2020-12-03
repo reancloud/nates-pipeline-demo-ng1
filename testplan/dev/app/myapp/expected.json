@@ -1,1 +1,65 @@
-{}
+{
+  "input": {
+    "aws_security_group": {
+      "prod-web2-pub-sg": {
+        "name": "prod-web2-pub-sg",
+        "vpc_id": "vpc-02c4085d179184ee9",
+        "tags": {
+          "Environment": "prod",
+          "Owner": "Nate Pan",
+          "Product": "web2",
+          "Project": "REANPlatform",
+          "Name": "prod-web2-pub-sg"
+        }
+      }
+    },
+    "aws_security_group_rule": {
+      "officeip": {
+        "type": "ingress",
+        "cidr_blocks": [
+          "0.0.0.0/0"
+        ],
+        "from_port": 443,
+        "to_port": 443,
+        "protocol": "tcp"
+      },
+        "myip": {
+        "type": "ingress",
+        "cidr_blocks": [
+          "108.51.34.3/32"
+        ],
+        "from_port": 22,
+        "to_port": 22,
+        "protocol": "tcp"
+      }
+    },
+    "aws_instance": {
+      "prod-web2-ec2-app": {
+        "name": "prod-web2-ec2-app",
+        "instance_type": "t2.nano",
+        "ami": "ami-0519a84a46d718361",
+        "instance_initiated_shutdown_behavior": "stop",
+        "security_groups": "prod-web2-pub-sg",
+        "tags": {
+            "Environment": "prod",
+            "Owner": "Nate Pan",
+            "Product": "web2",
+            "Project": "REANPlatform",
+            "Name": "prod-web2-ec2-app"
+        }
+      }
+    }
+  },
+  "output": {
+    "aws_security_group": {
+      "prod-web2-pub-sg": "sg-0250ba939a34a1fb8"
+    },
+    "aws_security_group_rule": {
+      "officeip": "sg-0250ba939a34a1fb8",
+      "myip":"sg-0250ba939a34a1fb8"
+    },
+    "aws_instance": {
+      "prod-web2-ec2-app": "i-06121fa47fd74a7a1"
+    }
+  }
+}
